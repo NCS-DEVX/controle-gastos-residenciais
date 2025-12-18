@@ -1,0 +1,24 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+*.cache
+*.log
+
+# SQLite / DB local
+*.db
+*.db-shm
+*.db-wal
+
+# Node / React
+**/node_modules/
+**/dist/
+**/build/
+.vite/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
