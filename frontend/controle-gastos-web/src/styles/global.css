@@ -1,0 +1,223 @@
+:root {
+  /* Background */
+  --bg: #f4f7fb;
+
+  /* Cards / superfícies */
+  --panel: #ffffff;
+  --panel-2: #f1f5fb;
+  --border: #dce3ee;
+
+  /* Texto */
+  --text: #0b1f44;
+  --muted: #5c6f8a;
+
+  /* Identidade MAXIPROD (base na imagem) */
+  --primary: #1ba3d8; /* azul claro */
+  --primary-dark: #0f6fb2; /* azul médio */
+  --primary-darker: #0a2e6e; /* azul escuro */
+
+  --accent: #f9a826; /* laranja CTA */
+  --accent-dark: #e0911f;
+
+  --danger: #e5533d;
+  --ok: #2dbf7f;
+
+  /* UI */
+  --radius: 14px;
+  --shadow: 0 12px 30px rgba(15, 50, 120, 0.15);
+  --shadow-soft: 0 6px 18px rgba(15, 50, 120, 0.1);
+
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: radial-gradient(
+      900px 600px at 12% 8%,
+      rgba(27, 163, 216, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 600px at 82% 18%,
+      rgba(10, 46, 110, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 600px at 60% 92%,
+      rgba(249, 168, 38, 0.1),
+      transparent 55%
+    ),
+    var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 18px 60px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.cardBody {
+  padding: 18px;
+}
+
+.h1 {
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+.subtle {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 200px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.input {
+  height: 42px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  outline: none;
+}
+
+.input:focus {
+  border-color: rgba(27, 163, 216, 0.55);
+  box-shadow: 0 0 0 4px rgba(27, 163, 216, 0.18);
+}
+
+.btn {
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: rgba(15, 111, 178, 0.08);
+}
+
+.btn:hover {
+  background: rgba(15, 111, 178, 0.12);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnPrimary {
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-weight: 600;
+}
+.btnPrimary:hover {
+  filter: brightness(1.03);
+}
+
+.btnAccent {
+  background: var(--accent);
+  color: #1f2a44;
+  font-weight: 800;
+}
+.btnAccent:hover {
+  background: var(--accent-dark);
+}
+
+.btnDanger {
+  background: rgba(229, 83, 61, 0.1);
+  border-color: rgba(229, 83, 61, 0.35);
+  color: #8a1f12;
+}
+.btnDanger:hover {
+  background: rgba(229, 83, 61, 0.14);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.table th,
+.table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(15, 50, 120, 0.08);
+  text-align: left;
+}
+
+.table th {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--panel-2);
+}
+
+.table tr:hover td {
+  background: rgba(27, 163, 216, 0.05);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(15, 111, 178, 0.06);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+hr.sep {
+  border: none;
+  height: 1px;
+  background: rgba(15, 50, 120, 0.1);
+  margin: 14px 0;
+}

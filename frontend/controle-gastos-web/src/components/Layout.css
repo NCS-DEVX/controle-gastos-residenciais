@@ -1,0 +1,82 @@
+.appShell {
+  min-height: 100vh;
+}
+
+.topbar {
+  margin: 18px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-darker));
+  box-shadow: var(--shadow);
+}
+
+.topbarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #fff;
+}
+
+.brandMark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.28),
+      rgba(255, 255, 255, 0.1)
+    ),
+    radial-gradient(
+      18px 18px at 30% 30%,
+      rgba(249, 168, 38, 0.85),
+      transparent 55%
+    ),
+    rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.brandTitle {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.brandSub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.navLink {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+}
+
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.navLink.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
