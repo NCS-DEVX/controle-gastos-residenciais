@@ -23,6 +23,10 @@ export function TransacoesPage() {
   const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
 
+  function formatarMoeda(v: number) {
+    return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  }
+
   async function carregarDados() {
     try {
       setErro("");
@@ -51,6 +55,7 @@ export function TransacoesPage() {
   const categoriasFiltradas = useMemo(() => {
     return categorias.filter((c) => {
       if (c.finalidade === FinalidadeCategoria.Ambas) return true;
+
       return tipo === TipoTransacao.Despesa
         ? c.finalidade === FinalidadeCategoria.Despesa
         : c.finalidade === FinalidadeCategoria.Receita;
@@ -81,6 +86,7 @@ export function TransacoesPage() {
         categoriaId,
       });
 
+      // Mantém pessoa/tipo para facilitar cadastro em sequência.
       setDescricao("");
       setValor("");
       setCategoriaId(0);
@@ -123,6 +129,7 @@ export function TransacoesPage() {
               className="input"
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
+              placeholder="Ex: Aluguel, Mercado, Salário..."
             />
           </div>
 
@@ -137,6 +144,7 @@ export function TransacoesPage() {
               }
               min={0}
               step="0.01"
+              placeholder="0,00"
             />
           </div>
 
@@ -147,7 +155,7 @@ export function TransacoesPage() {
               value={tipo}
               onChange={(e) => {
                 setTipo(Number(e.target.value) as TipoTransacao);
-                setCategoriaId(0);
+                setCategoriaId(0); // força selecionar categoria compatível
               }}
             >
               <option value={TipoTransacao.Despesa}>Despesa</option>
@@ -197,8 +205,8 @@ export function TransacoesPage() {
         </div>
 
         {erro && (
-          <div className="subtle" style={{ marginTop: 12 }}>
-            {erro}
+          <div style={{ marginTop: 12 }}>
+            <span className="badge">{erro}</span>
           </div>
         )}
 
@@ -227,7 +235,7 @@ export function TransacoesPage() {
                   <td>
                     <span className="badge">{tipoTransacaoLabel(t.tipo)}</span>
                   </td>
-                  <td>R$ {t.valor.toFixed(2)}</td>
+                  <td>{formatarMoeda(t.valor)}</td>
                 </tr>
               ))}
             </tbody>

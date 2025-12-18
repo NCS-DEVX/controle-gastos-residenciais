@@ -1,4 +1,9 @@
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_ControleGastos.Tests
+C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.csproj.AssemblyReference.cache
+C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.AssemblyInfoInputs.cache
+C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.AssemblyInfo.cs
+C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.csproj.CoreCompileInputs.cache
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\testhost.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\ControleGastos.Api.deps.json
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\ControleGastos.Api.runtimeconfig.json
@@ -18,7 +23,6 @@ C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
@@ -135,11 +139,6 @@ C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\ControleGastos.Api.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\bin\Debug\net8.0\ControleGastos.Api.pdb
-C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.csproj.AssemblyReference.cache
-C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.GeneratedMSBuildEditorConfig.editorconfig
-C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.AssemblyInfoInputs.cache
-C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.AssemblyInfo.cs
-C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.csproj.CoreCompileInputs.cache
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\Controle.DD28AD98.Up2Date
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\ControleGastos.Tests.dll
 C:\ProjM\TesteTecnico\controle-gastos-residenciais\backend\ControleGastos.Tests\obj\Debug\net8.0\refint\ControleGastos.Tests.dll

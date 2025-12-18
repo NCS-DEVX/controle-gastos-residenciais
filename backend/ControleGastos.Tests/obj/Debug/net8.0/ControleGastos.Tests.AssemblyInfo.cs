@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControleGastos.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a250fdec58ba7d0d80dac6b431754f77a35bb09d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControleGastos.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControleGastos.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

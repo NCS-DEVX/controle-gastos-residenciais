@@ -1,31 +1,30 @@
-## Sistema de Controle de Gastos Residenciais
+# Sistema de Controle de Gastos Residenciais
 
-Sistema desenvolvido para controle de gastos residenciais, permitindo o cadastro de pessoas, categorias e transações financeiras, além da geração de relatórios consolidados, conforme especificação do teste técnico.
+Sistema desenvolvido para controle de gastos residenciais, permitindo o cadastro de pessoas, categorias e transações financeiras, além da geração de relatórios, conforme solicitado no teste técnico.
 
-Este projeto foi desenvolvido como parte de um **teste técnico para a vaga de Desenvolvedor Full Stack Júnior**, seguindo as regras de negócio descritas no enunciado.
-
----
-
-## 🎯 Objetivo do Projeto
-
-O objetivo deste projeto foi implementar o sistema solicitado no teste técnico de forma clara e organizada, garantindo o correto funcionamento das regras de negócio exigidas e a separação básica de responsabilidades entre as partes da aplicação.
+Este projeto foi desenvolvido como parte de um **teste técnico para a vaga de Desenvolvedor Full Stack Júnior**.
 
 ---
 
-## 🧱 Arquitetura do Projeto
+## Objetivo
 
-O sistema foi dividido em dois projetos independentes:
+O objetivo foi implementar o sistema proposto no teste técnico, focando no correto funcionamento das regras de negócio e na organização do código.
+
+---
+
+## Arquitetura
+
+O projeto foi separado em dois módulos:
 
 - **Back-end:** ASP.NET Core Web API (.NET 8)
 - **Front-end:** React com TypeScript
 
-A separação entre back-end e front-end foi adotada para facilitar a organização do código e o desenvolvimento da aplicação.
-
-O foco principal do teste está no **back-end**, enquanto o front-end foi desenvolvido para consumo e visualização dos dados da API.
+O foco principal do teste está no back-end.  
+O front-end foi desenvolvido apenas para consumo da API.
 
 ---
 
-## 🔧 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Back-end
 
@@ -34,7 +33,6 @@ O foco principal do teste está no **back-end**, enquanto o front-end foi desenv
 - Entity Framework Core
 - SQLite
 - Swagger
-- Injeção de Dependência
 
 ### Front-end
 
@@ -45,50 +43,36 @@ O foco principal do teste está no **back-end**, enquanto o front-end foi desenv
 
 ---
 
-## 📦 Estrutura do Back-end
+## Estrutura do Back-end
 
 ```
 ControleGastos.Api/
-├── Controllers/    // Endpoints HTTP
-├── Services/       // Regras de negócio
-├── Models/         // Entidades do domínio
-│   └── Enums/      // Enums do domínio
-├── DTOs/           // Objetos de retorno dos relatórios
-├── Data/           // DbContext e persistência
+├── Controllers   // Endpoints da API
+├── Services      // Regras de negócio
+├── Models        // Entidades
+│   └── Enums
+├── DTOs          // Retorno dos relatórios
+├── Data          // DbContext e configurações do banco
 ├── Program.cs
 └── appsettings.json
 ```
 
 ---
 
-## 📦 Estrutura do Front-end
-
-```
-controle-gastos-web/
-├── src/
-│   ├── components/   // Componentes reutilizáveis
-│   ├── pages/        // Páginas da aplicação
-│   ├── api/          // Comunicação com a API
-│   └── App.tsx
-└── package.json
-```
-
----
-
-## 📋 Regras de Negócio Implementadas
+## Regras de Negócio Implementadas
 
 - Cadastro de pessoas, categorias e transações
-- Exclusão em cascata de transações ao remover pessoa
-- Validação de valores positivos
-- Restrição de receitas para menores de idade
-- Compatibilidade entre tipo de transação e categoria
-- Relatórios por pessoa (obrigatório) e categoria (opcional)
+- Remoção de transações ao excluir uma pessoa
+- Validação de valores positivos para transações
+- Pessoas menores de idade não podem registrar receitas
+- Categoria deve ser compatível com o tipo da transação
+- Relatórios por pessoa e por categoria
 
-As regras de negócio foram implementadas na camada de **Services**, mantendo os Controllers responsáveis apenas pela orquestração HTTP.
+As regras foram implementadas na camada de **Services**, mantendo os controllers responsáveis apenas pelo recebimento das requisições.
 
 ---
 
-## 🔗 Principais Endpoints da API
+## Endpoints Principais
 
 - `GET /api/pessoas`
 - `POST /api/pessoas`
@@ -105,23 +89,23 @@ As regras de negócio foram implementadas na camada de **Services**, mantendo os
 
 ---
 
-## 🧪 Testes Unitários
+## Testes
 
-Testes implementados com **xUnit** e **EF Core InMemory**, focados nas regras de negócio:
+Foram implementados testes unitários com **xUnit**, focando nas regras de negócio mais importantes, como:
 
-- Validação de idade
-- Validação de categoria x tipo
-- Exclusão em cascata
-
----
-
-## 💾 Persistência de Dados
-
-Persistência com **SQLite**, utilizando migrations do Entity Framework Core.
+- Exclusão em cascata de transações
+- Validação de idade para receitas
+- Validação de categoria x tipo de transação
 
 ---
 
-## ▶️ Como Executar
+## Persistência
+
+Os dados são persistidos em **SQLite**, utilizando migrations do Entity Framework Core.
+
+---
+
+## Como Executar
 
 ### Back-end
 
@@ -131,7 +115,7 @@ dotnet ef database update
 dotnet run
 ```
 
-Swagger:
+Swagger disponível em:
 
 ```
 http://localhost:5130/swagger
@@ -147,15 +131,8 @@ npm run dev
 
 ---
 
-## 🧠 Decisões Técnicas
+## Observações Finais
 
-- SQLite por simplicidade
-- EF Core para acesso a dados
-- Enums para padronização
-- Services centralizando regras
+Projeto desenvolvido com foco em simplicidade, organização e cumprimento do escopo solicitado no teste técnico.
 
----
-
-## 📝 Observações Finais
-
-Projeto desenvolvido com foco em clareza, organização e aderência ao escopo do teste técnico.
+- Foi adicionado um middleware simples para tratamento de erros de regra de negócio.

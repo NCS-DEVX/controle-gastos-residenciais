@@ -1,3 +1,4 @@
+using ControleGastos.Api.DTOs;
 using ControleGastos.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,31 +18,35 @@ namespace ControleGastos.Api.Controllers
         [HttpGet("pessoas")]
         public async Task<IActionResult> GetTotaisPorPessoa()
         {
-            var (pessoas, totalReceitas, totalDespesas, saldoGeral)
-                = await _service.ObterTotaisPorPessoaAsync();
+            var (pessoas, totalReceitas, totalDespesas, _) =
+                await _service.ObterTotaisPorPessoaAsync();
 
-            return Ok(new
+            var response = new RelatorioPessoaResponseDto
             {
                 Pessoas = pessoas,
                 TotalReceitas = totalReceitas,
-                TotalDespesas = totalDespesas,
-                SaldoGeral = saldoGeral
-            });
+                TotalDespesas = totalDespesas
+                // SaldoGeral é calculado automaticamente no DTO
+            };
+
+            return Ok(response);
         }
 
         [HttpGet("categorias")]
         public async Task<IActionResult> GetTotaisPorCategoria()
         {
-            var (categorias, totalReceitas, totalDespesas, saldoGeral)
-                = await _service.ObterTotaisPorCategoriaAsync();
+            var (categorias, totalReceitas, totalDespesas, _) =
+                await _service.ObterTotaisPorCategoriaAsync();
 
-            return Ok(new
+            var response = new RelatorioCategoriaResponseDto
             {
                 Categorias = categorias,
                 TotalReceitas = totalReceitas,
-                TotalDespesas = totalDespesas,
-                SaldoGeral = saldoGeral
-            });
+                TotalDespesas = totalDespesas
+                // SaldoGeral é calculado automaticamente no DTO
+            };
+
+            return Ok(response);
         }
     }
 }

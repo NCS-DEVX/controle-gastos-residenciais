@@ -1,4 +1,5 @@
 using ControleGastos.Api.Data;
+using ControleGastos.Api.Middlewares;
 using ControleGastos.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,7 +32,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    // Aplica migrations automaticamente no ambiente de desenvolvimento.
+    // Aplica migrations automaticamente no ambiente de desenvolvimento
     using var scope = app.Services.CreateScope();
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     db.Database.Migrate();
@@ -41,6 +42,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Middleware global de tratamento de exceções
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors("FrontendDev");
 

@@ -26,7 +26,7 @@ namespace ControleGastos.Api.Controllers
         public async Task<IActionResult> Post([FromBody] Transacao transacao)
         {
             var criada = await _service.CriarAsync(transacao);
-            return StatusCode(StatusCodes.Status201Created, criada);
+            return CreatedAtAction(nameof(Get), new { id = criada.Id }, criada);
         }
     }
 }

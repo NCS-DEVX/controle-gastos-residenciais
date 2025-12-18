@@ -13,7 +13,7 @@ public class TransacaoServiceTests
     public async Task CriarTransacao_QuandoPessoaMenorDeIdadeEReceita_DeveFalhar()
     {
         // Arrange
-        await using var db = TestDbContextFactory.CreateInMemoryDbContext();
+        await using var db = TestDbContextFactory.CreateSqliteInMemoryDbContext();
 
         var pessoa = new Pessoa { Nome = "Nathan", Idade = 17 };
 
@@ -50,7 +50,7 @@ public class TransacaoServiceTests
     public async Task CriarTransacao_QuandoTipoDespesaECategoriaEhSomenteReceita_DeveFalhar()
     {
         // Arrange
-        await using var db = TestDbContextFactory.CreateInMemoryDbContext();
+        await using var db = TestDbContextFactory.CreateSqliteInMemoryDbContext();
 
         var pessoa = new Pessoa { Nome = "Nathan", Idade = 25 };
 
@@ -83,4 +83,3 @@ public class TransacaoServiceTests
         Assert.Equal(0, await db.Transacoes.CountAsync());
     }
 }
-

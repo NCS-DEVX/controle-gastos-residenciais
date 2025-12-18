@@ -97,14 +97,13 @@ export function PessoasPage() {
             <div className="label">Idade</div>
             <input
               className="input"
+              type="number"
+              min={1}
+              step={1}
               value={idade}
-              onChange={(e) => {
-                const v = e.target.value;
-                if (v === "") return setIdade("");
-                const n = Number(v);
-                if (!Number.isNaN(n)) setIdade(n);
-              }}
-              inputMode="numeric"
+              onChange={(e) =>
+                setIdade(e.target.value === "" ? "" : Number(e.target.value))
+              }
               placeholder="Ex: 26"
             />
           </div>

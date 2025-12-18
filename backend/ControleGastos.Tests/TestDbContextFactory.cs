@@ -1,17 +1,27 @@
-using ControleGastos.Api.Data; // ajuste namespace
+using ControleGastos.Api.Data;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
-namespace ControleGastos.Tests;
-
-public static class TestDbContextFactory
+namespace ControleGastos.Tests
 {
-    public static AppDbContext CreateInMemoryDbContext()
+    public static class TestDbContextFactory
     {
-        // Nome único por teste garante isolamento total (sem sujeira de outro teste)
-        var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
+        public static AppDbContext CreateSqliteInMemoryDbContext()
+        {
+            // SQLite em memória: comportamento mais próximo do banco real
+            var connection = new SqliteConnection("DataSource=:memory:");
+            connection.Open();
 
-        return new AppDbContext(options);
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseSqlite(connection)
+                .Options;
+
+            var context = new AppDbContext(options);
+
+            // Cria o schema no banco em memória
+            context.Database.EnsureCreated();
+
+            return context;
+        }
     }
 }
