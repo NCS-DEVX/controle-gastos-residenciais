@@ -26,10 +26,12 @@ namespace ControleGastos.Api.Services
                 .ToListAsync();
 
             // SQLite não suporta SUM(decimal) via SQL; materialização garante compatibilidade.
+            // Materializar e somar em memória garante consistência nos cálculos financeiros.
             var transacoes = await _context.Transacoes
                 .AsNoTracking()
                 .ToListAsync();
 
+            // Pré-calcula totais por pessoa para evitar múltiplas varreduras na lista final.
             var totaisPorPessoaId = transacoes
                 .GroupBy(t => t.PessoaId)
                 .ToDictionary(
@@ -80,6 +82,7 @@ namespace ControleGastos.Api.Services
                 .AsNoTracking()
                 .ToListAsync();
 
+            // Mesma decisão do relatório por pessoa: cálculo em memória para manter precisão/consistência.
             var transacoes = await _context.Transacoes
                 .AsNoTracking()
                 .ToListAsync();

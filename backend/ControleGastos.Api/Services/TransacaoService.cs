@@ -26,7 +26,6 @@ namespace ControleGastos.Api.Services
             if (transacao == null)
                 throw new ArgumentNullException(nameof(transacao));
 
-            // Validações básicas (formato/consistência).
             if (string.IsNullOrWhiteSpace(transacao.Descricao))
                 throw new ArgumentException("A descrição da transação é obrigatória.");
 
@@ -36,6 +35,8 @@ namespace ControleGastos.Api.Services
             if (!Enum.IsDefined(typeof(TipoTransacao), transacao.Tipo))
                 throw new ArgumentException("Tipo de transação inválido.");
 
+            // Busca apenas para validar existência e aplicar regras de negócio.
+            // AsNoTracking evita tracking desnecessário em operações de leitura.
             var pessoa = await _context.Pessoas
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Id == transacao.PessoaId);
